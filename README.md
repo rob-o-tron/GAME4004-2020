@@ -11,7 +11,15 @@
 - Buckland, Mat (2005) Programming Game AI by Example, Worldware Publishing Inc
 
 ## Contact
-* Email: robbogucki@gmail.com
+* Email:  rob.bogucki@tudublin.ie | robbogucki@gmail.com
+
+# Week 8
+
+## "Coding Games"
+- exploring visual programming, creative coding exercises, gamified coding practice
+
+## Lecture Slides
+- ["Coding Games"] (https://drive.google.com/open?id=12bGKJLamEpAZR2CvHKw-oZ5GalLItyxh)
 
 # Week 6&7
 
