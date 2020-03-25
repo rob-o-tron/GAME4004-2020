@@ -26,7 +26,7 @@
 - [Part II](https://youtu.be/tA0doB6k6UQ)
 
 ## Lecture Slides
-- ["Coding Games"] (https://drive.google.com/open?id=12bGKJLamEpAZR2CvHKw-oZ5GalLItyxh)
+- ["Coding Games"](https://drive.google.com/open?id=12bGKJLamEpAZR2CvHKw-oZ5GalLItyxh)
 
 # Week 6&7
 
