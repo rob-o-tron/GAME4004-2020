@@ -23,7 +23,7 @@
 
 ## Lecture Videos
 - [Part I](https://youtu.be/ja8l6GVwfUY)
-- [Part II](https://youtu.be/xB2rM8XvjeQ)
+- [Part II](https://youtu.be/tA0doB6k6UQ)
 
 ## Lecture Slides
 - ["Coding Games"] (https://drive.google.com/open?id=12bGKJLamEpAZR2CvHKw-oZ5GalLItyxh)
