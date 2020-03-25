@@ -1,17 +1,20 @@
 # GAME4004 Game Programming 2020
 
+## Contact
+* Email:  rob.bogucki@tudublin.ie | robbogucki@gmail.com
+
 ## ONLINE LECTURE
 - The lectures will be delivered online via Discord for the time being. 
   I will be screensharing and talking on the General audio channel.
   Here is the Discord invite:
   https://discord.gg/4tT4fd3
 
+## Final Project
+- [Project Brief](https://drive.google.com/open?id=1-92K9HQPE5HhxVSYHcNwUxniUWW5Kp6v)
+
 ## Reading
 - Ferrone, Harrison (2019) Learning C# by Developing Games with Unity 2019, 4th Ed., Packt Publishing
 - Buckland, Mat (2005) Programming Game AI by Example, Worldware Publishing Inc
-
-## Contact
-* Email:  rob.bogucki@tudublin.ie | robbogucki@gmail.com
 
 # Week 8
 
