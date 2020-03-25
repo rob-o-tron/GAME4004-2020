@@ -21,6 +21,10 @@
 ## "Coding Games"
 - exploring visual programming, creative coding exercises, gamified coding practice
 
+## Lecture Videos
+- [Part I](https://youtu.be/ja8l6GVwfUY)
+- [Part II](https://youtu.be/xB2rM8XvjeQ)
+
 ## Lecture Slides
 - ["Coding Games"] (https://drive.google.com/open?id=12bGKJLamEpAZR2CvHKw-oZ5GalLItyxh)
 
