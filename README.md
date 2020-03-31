@@ -16,6 +16,16 @@
 - Ferrone, Harrison (2019) Learning C# by Developing Games with Unity 2019, 4th Ed., Packt Publishing
 - Buckland, Mat (2005) Programming Game AI by Example, Worldware Publishing Inc
 
+# Week 9
+
+## "Animation"
+
+## Assets:
+- [Unitypackage with animations](https://drive.google.com/open?id=1iv6Pa4IT1ZcN2vzWdWCvgVj-gN9F4oAS)
+
+## Lecture Slides
+- ["Unity Animation"](https://drive.google.com/open?id=11j5H9jAJdaaHBKwBrDGnrXvBCBANhcMi)
+
 # Week 8
 
 ## "Coding Games"
