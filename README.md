@@ -18,7 +18,7 @@
 
 # Week 9
 
-## "Animation"
+## Animation
 
 ## Assets:
 - [Unitypackage with animations](https://drive.google.com/open?id=1iv6Pa4IT1ZcN2vzWdWCvgVj-gN9F4oAS)
