@@ -50,7 +50,9 @@ namespace GRIDCITY
                         }
                         else
                         {
-                            navAgent.destination= GameController.Instance.RequestPatrolTarget().position;
+                            Transform patrolTransform = GameController.Instance.RequestPatrolTarget();
+                            if (patrolTransform!=null)
+                                navAgent.destination= patrolTransform.position;
                         }
                     }
                 }
