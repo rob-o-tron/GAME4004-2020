@@ -77,8 +77,6 @@ namespace GRIDCITY
                 playerAgent.destination = bodyTransform.position + moveVec;
             }
 
-
-
             else if ((GameController.Instance.gameState == GameController.GameState.GameOver)&&(finished==false))
             {
                 charAnimator.SetBool("forward", false);

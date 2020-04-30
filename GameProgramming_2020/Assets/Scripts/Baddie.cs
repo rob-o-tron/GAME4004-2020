@@ -16,6 +16,7 @@ namespace GRIDCITY
         public Transform eyeTransform;
         public LayerMask raycastMask;
         public float maxRange = 3f;
+        public bool regularPatrol = true;
         // Start is called before the first frame update
         void Start()
         {
@@ -42,23 +43,23 @@ namespace GRIDCITY
                     // Does the ray intersect any objects excluding the player layer
                     if (Physics.Raycast(eyeTransform.position, aimVec, out hit, maxRange, raycastMask))
                     {
-                        if ((hit.collider.tag == "Player"))
+                        if (hit.collider.tag == "Player")
                         {
                             navAgent.destination = playerTransform.position;
                             audioSource.Play();
                             sightsTimer = 0.0f;
+                            regularPatrol = false;
                         }
-                        else
+                        else if (!regularPatrol)
                         {
                             Transform patrolTransform = GameController.Instance.RequestPatrolTarget();
                             if (patrolTransform!=null)
-                                navAgent.destination= patrolTransform.position;
+                                navAgent.destination= patrolTransform.position;  
+                            regularPatrol = true;
                         }
-                    }
+                    }  
                 }
             }
-
-
         }
 
         private void OnTriggerEnter(Collider other)
