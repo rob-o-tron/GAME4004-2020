@@ -215,14 +215,15 @@ namespace GRIDCITY
             cityManager.SetNavMeshReadyFlag(false);
             audioMaster.Reset();
 
-            audioMaster.PlayTitles();
-            cinematicTimeline.Play();
+            //audioMaster.PlayTitles();
+            //cinematicTimeline.Play();
 
             //Randomize game environment for a new game:
             RandomizeStage();
             RandomizeTowerFlavours();
             yield return new WaitForSeconds(2f);
-            cityManager.BuildTowers(Random.Range(25,45));
+            //cityManager.BuildTowers(Random.Range(25,45));
+            //cityManager.BuildDome(30f);
             yield return new WaitForSeconds(2f);
             cityManager.BuildRoads();
             yield return new WaitForSeconds(3f);
@@ -231,12 +232,13 @@ namespace GRIDCITY
             cityManager.SetNavMeshReadyFlag(true);
             yield return new WaitForSeconds(2.0f);
 
-            gameState = GameState.Prompt;
-
+            gameState = GameState.Game;
+            /*
             while (gameState==GameState.Prompt) //just wait and yield execution to rendering
             {
                 yield return null;
             }
+            */
             // we must be entering game now, so do a few things:
             //1. Spawn Player
             player = Instantiate(playerPrefab, cityManager.startLocation.position,Quaternion.identity);
@@ -252,7 +254,7 @@ namespace GRIDCITY
             //4. start spawning Baddies:
             baddiesNeeded = true;
 
-            cinematicTimeline.Stop();
+            //cinematicTimeline.Stop();
             DoOverlayTransitionFade(2f);
             audioMaster.FadeOut(2f);
             yield return new WaitForSeconds(2f);

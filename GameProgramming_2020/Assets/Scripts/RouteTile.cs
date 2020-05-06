@@ -82,6 +82,7 @@ namespace GRIDCITY
 
         private void Update()
         {
+            /*
             if ((cityManager.navMeshReady) && (mySlope == 0) && gameController.gameState!=GameController.GameState.Game)
             {
                 int rando = Random.Range(0, 1000);
@@ -120,17 +121,18 @@ namespace GRIDCITY
                     }
                 }
             }
+            */
         }
 
         // Use this for external initialization
         void Start()
         {       
-            int x = Mathf.RoundToInt(transform.position.x + 20.0f);
+            int x = Mathf.RoundToInt(transform.position.x + 75.0f);
             int y = Mathf.RoundToInt(transform.position.y);
             if (mySlope==-1)
                 y = Mathf.RoundToInt(transform.position.y-1f);
 
-            int z = Mathf.RoundToInt(transform.position.z + 20.0f);
+            int z = Mathf.RoundToInt(transform.position.z + 75.0f);
 
             cityManager = GridCityManager.Instance;
             tilePrefab = cityManager.tilePrefab;

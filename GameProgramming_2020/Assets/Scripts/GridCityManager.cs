@@ -18,6 +18,7 @@ namespace GRIDCITY
         public Transform agentPrefab;
         public Transform gridVisPrefab;
         public GameObject treePrefab;
+        public Transform basicPrefab;
 
         public BuildingProfile[] gameProfileArray;
         public BuildingProfile wallProfile;
@@ -27,7 +28,7 @@ namespace GRIDCITY
         public bool navMeshReady = false;
 
 
-        private bool[,,] cityArray = new bool [40,40,40];   //increased array size to allow for larger city volume
+        private bool[,,] cityArray = new bool [150, 150, 150];   //increased array size to allow for larger city volume
 
         public static GridCityManager Instance
         {
@@ -60,15 +61,16 @@ namespace GRIDCITY
 
         public void ResetArray()
         {
-            for (int i = 0; i < 40; i++)
-                for (int j = 0; j < 40; j++)
-                    for (int k = 0; k < 40; k++)
+            for (int i = 0; i < 75; i++)
+                for (int j = 0; j < 75; j++)
+                    for (int k = 0; k < 75; k++)
                         cityArray[i, j, k] = false;
         }
 		
 		// Use this for external initialization
 		void Start ()
         {
+            /*
             //UPDATING PLANNING ARRAY TO ACCOUNT FOR MANUALLY PLACED|CITY GATE
             for (int ix = -2; ix < 3; ix++)
             {
@@ -78,6 +80,7 @@ namespace GRIDCITY
                     SetSlot(ix + 20, iy, iz + 20, true);
                 }
             }
+
 
             //BUILD CITY WALLS
             for (int i = -17; i < 18; i += 34)
@@ -91,6 +94,7 @@ namespace GRIDCITY
                     Instantiate(buildingPrefab, new Vector3(j, 0.05f, i), Quaternion.identity).GetComponent<GridTowerBlock>().SetProfile(wallProfile);
                 }
             }
+            */
 
         }
 
@@ -104,7 +108,7 @@ namespace GRIDCITY
 
         public bool CheckSlot(int x, int y, int z)
         {
-            if (x < 0 || x > 39 || y < 0 || y > 39 || z < 0 || z > 39) return true;
+            if (x < 0 || x > 149 || y < 0 || y > 149 || z < 0 || z > 149) return true;
             else
             {
                 return cityArray[x, y, z];
@@ -114,12 +118,12 @@ namespace GRIDCITY
 
         public void SetSlot(int x, int y, int z, bool occupied)
         {
-            if (!(x < 0 || x > 39 || y < 0 || y > 39 || z < 0 || z > 39))
+            if (!(x < 0 || x > 149 || y < 0 || y > 149 || z < 0 || z > 149))
             {
                 cityArray[x, y, z] = occupied;
                 if (occupied)
                 {
-                    Instantiate(gridVisPrefab, new Vector3(x-20, y, z-20), Quaternion.identity,GameController.Instance.dummyPivot);
+                    Instantiate(gridVisPrefab, new Vector3(x-75, y, z-75), Quaternion.identity,GameController.Instance.dummyPivot);
                 }
             }
 
@@ -137,6 +141,41 @@ namespace GRIDCITY
 
             }
         }
+
+        public void BuildDome(float domeradius)
+        {
+            float radius = domeradius;
+            int range = (int)domeradius;
+            for (int j=0;j <= range; j++)
+            {
+                radius = domeradius * (Mathf.Cos(Mathf.PI / 2f * (j/ domeradius) ));
+                for (int i=0;i<360;i++)
+                {
+                    float x = radius * Mathf.Sin(Mathf.PI * 2f * (((float)i) / 360f));
+                    float z = radius * Mathf.Cos(Mathf.PI * 2f * (((float)i) / 360f));
+                    float y = j;
+
+                    int x_array = Mathf.RoundToInt(x + 75);
+                    int z_array = Mathf.RoundToInt(z + 75);
+                    int y_array = j;
+
+                    if (!(CheckSlot(x_array, y_array, z_array)))
+                    {
+                        Instantiate(basicPrefab, new Vector3(Mathf.RoundToInt(x), j, Mathf.RoundToInt(z)), Quaternion.identity);
+                        SetSlot(x_array, y_array, z_array, true);
+                    }
+
+                }
+            }
+
+
+
+
+
+
+        }
+
+
 
         public void BakeNavMesh()
         {
